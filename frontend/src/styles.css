@@ -1,0 +1,719 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+/* Filters */
+.filters, .fee-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filters input, .filters select {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Fee slider */
+.fee-filter label {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.fee-filter input[type="range"] {
+  width: 150px;
+}
+
+/* ===== College Dashboard ===== */
+.college-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.college-card {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.college-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.college-card p {
+  margin: 5px 0;
+}
+
+/* ===== Add Review Form under each college ===== */
+.college-card .review-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.college-card .review-form input[type="number"],
+.college-card .review-form textarea {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.college-card .review-form button {
+  padding: 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.college-card .review-form button:hover {
+  background-color: #45a049;
+}
+
+/* ===== Reviews displayed under each college ===== */
+.college-card .review-card {
+  background-color: #f1f1f1;
+  padding: 8px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .college-card {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .college-card .review-form input,
+  .college-card .review-form textarea {
+    font-size: 0.85rem;
+  }
+
+  .college-card .review-form button {
+    font-size: 0.85rem;
+  }
+}
+
+/* Link button */
+a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+a:hover {
+  color: #005fa3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filters, .fee-filter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fee-filter input[type="range"] {
+    width: 80%;
+  }
+}
+
+
+
+/* Auth Pages */
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077cc;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.auth-container button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0077cc;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-container button:hover {
+  background-color: #005fa3;
+}
+
+.auth-container p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-container p a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-items {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-items a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-items a:hover {
+  color: #ffeb3b;
+}
+
+/* For small screens */
+@media (max-width: 600px) {
+  .nav-items {
+    flex-direction: column;
+    background: #005fa3;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    padding: 10px;
+    display: none;
+  }
+
+  .navbar.active .nav-items {
+    display: flex;
+  }
+}
+
+.logout-btn {
+  background-color: #ff4b4b;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ef9b9b;
+}
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.welcome-text {
+  color: #ffffff;
+  font-weight: 500;
+  background-color: #0a66c2;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.logout-btn {
+  background-color: #ff4b4b;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ff2a2a;
+}
+
+/* ---------- Home Page ---------- */
+.home-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  padding: 40px 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: linear-gradient(135deg, #e3f2fd, #f0f7ff);
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero-content {
+  flex: 1 1 450px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #0a66c2;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+  color: #004a99;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.explore-btn {
+  display: inline-block;
+  background-color: #0a66c2;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.explore-btn:hover {
+  background-color: #004a99;
+}
+
+.hero-image img {
+  width: 350px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Features Section */
+.features-section {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 30px 20px;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  color: #0a66c2;
+  margin-bottom: 10px;
+}
+/* ---------- Testimonials Section ---------- */
+.testimonials-section {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  color: #0a66c2;
+  margin-bottom: 30px;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  width: 300px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.testimonial-card h4 {
+  color: #0a66c2;
+  margin: 0;
+}
+
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ---------- Footer Section ---------- */
+.footer-section {
+  margin-top: 80px;
+  background-color: #0a66c2;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #dbeafe;
+}
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  background: #f9fafc;
+}
+
+.auth-card {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+.auth-card h2 {
+  color: #0a3d62;
+  margin-bottom: 1.5rem;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card input {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.auth-card button {
+  background: #0a3d62;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-card button:hover {
+  background: #074273;
+}
+
+.auth-link {
+  color: #0a3d62;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== Reviews Section ===== */
+.reviews-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+.review-heading-text{
+  font-size: 1rem;
+  color: #102511;
+}
+
+.review-card {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #4caf50;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.review-card p {
+  margin: 5px 0;
+}
+
+/* ===== Review Form ===== */
+.review-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.review-form input[type="number"],
+.review-form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  
+}
+
+.review-form button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+  background-color: #45a049;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 600px) {
+  .reviews-section {
+    padding: 5px;
+  }
+
+  .review-card {
+    padding: 10px;
+  }
+
+  .review-form input,
+  .review-form textarea {
+    font-size: 0.9rem;
+  }
+}
+/* --- Improved College Dashboard Styles --- */
+
+/* College Cards Layout */
+.college-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.college-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* College Info */
+.college-card h3 {
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.college-card p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin-top: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.reviews-section h4 {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+/* Each Review */
+.review-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.review-card p {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+/* Review Form */
+.review-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.review-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.review-form button:hover {
+  background: #0056b3;
+}
+
+/* View All Reviews Link */
+.view-all-btn {
+  margin-top: 8px;
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.view-all-btn:hover {
+  text-decoration: underline;
+}
