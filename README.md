@@ -20,7 +20,8 @@ A **Full-Stack College Dashboard** application that allows users to search, filt
 - **Responsive Design**
   - Works on mobile, tablet, and desktop
   - Clean, user-friendly UI
-
+  - 
+Deployed fully on Render for both frontend and backend.
 ---
 
 ## Tech Stack
@@ -38,7 +39,7 @@ A **Full-Stack College Dashboard** application that allows users to search, filt
 ### Prerequisites
 
 - Node.js installed  
-- MongoDB (if using MongoDB)  
+- MongoDB Atlas  
 
 ### Backend Setup
 
@@ -98,7 +99,7 @@ collegedashboardapp/
 └─ README.md
 
 ### Live Demo
-https://collegedashboardapp.vercel.app/
+https://collegedashbooardapp-1.onrender.com/
 
 Author
 Akanksha Are
