@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import "../styles.css";
-import API from "../api";
+import API from "../api"; // ✅ use your configured base URL instance
 
 function Reviews({ collegeId: propCollegeId, showForm = false }) {
   const { collegeId: paramCollegeId } = useParams();
@@ -13,33 +12,31 @@ function Reviews({ collegeId: propCollegeId, showForm = false }) {
   const [comment, setComment] = useState("");
   const [user, setUser] = useState(null);
 
-  // ✅ Get logged-in user from localStorage
+  // ✅ Get logged-in user
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) setUser(JSON.parse(storedUser));
   }, []);
 
-  // ✅ Fetch reviews (specific college or all)
- useEffect(() => {
-  const fetchReviews = async () => {
-    try {
-      let url = "http://localhost:5000/api/reviews";
-      if (collegeId) url += `?collegeId=${collegeId}`;
+  // ✅ Fetch reviews (using API instance)
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        let url = "/api/reviews";
+        if (collegeId) url += `?collegeId=${collegeId}`;
 
-      const res = await axios.get(url);
-      console.log("Fetched reviews:", res.data);
-      setReviews(res.data);
-    } catch (err) {
-      console.error("Error fetching reviews:", err);
-    }
-  };
+        const res = await API.get(url); // ✅ use baseURL from API.js
+        console.log("Fetched reviews:", res.data);
+        setReviews(res.data);
+      } catch (err) {
+        console.error("Error fetching reviews:", err);
+      }
+    };
 
-  fetchReviews();
-}, [collegeId]);
+    fetchReviews();
+  }, [collegeId]);
 
-
-
-  // ✅ Handle submit
+  // ✅ Handle review submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!rating || !comment) return alert("All fields are required");
@@ -53,7 +50,9 @@ function Reviews({ collegeId: propCollegeId, showForm = false }) {
         { collegeId, rating, comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      setReviews([...reviews, res.data.review]);
+
+      // ✅ Refresh the reviews immediately after submission
+      setReviews((prev) => [...prev, res.data.review || res.data]);
       setRating("");
       setComment("");
       alert("Review submitted successfully!");
@@ -65,7 +64,9 @@ function Reviews({ collegeId: propCollegeId, showForm = false }) {
 
   return (
     <div className="reviews-section">
-      <h2 className="review-heading-text">{collegeId ? "College Reviews" : "All Reviews"}</h2>
+      <h2 className="review-heading-text">
+        {collegeId ? "College Reviews" : "All Reviews"}
+      </h2>
 
       {reviews.length === 0 ? (
         <p>No reviews yet.</p>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link
 import "../styles.css";
 
 const Home = () => {
@@ -14,9 +15,11 @@ const Home = () => {
             Explore top colleges, compare courses, check reviews, and make
             informed decisions for your future — all in one place.
           </p>
-          <a href="/colleges" className="explore-btn">
+
+          {/* ✅ Changed from <a href> to <Link to> */}
+          <Link to="/colleges" className="explore-btn">
             Explore Colleges
-          </a>
+          </Link>
         </div>
         <div className="hero-image">
           <img src="/college-illustration.png" alt="College" />
@@ -89,12 +92,15 @@ const Home = () => {
       {/* ---------- Footer Section ---------- */}
       <footer className="footer-section">
         <div className="footer-content">
-          <p>© {new Date().getFullYear()} College Dashboard. All Rights Reserved.</p>
+          <p>
+            © {new Date().getFullYear()} College Dashboard. All Rights Reserved.
+          </p>
           <div className="footer-links">
-            <a href="/">Home</a>
-            <a href="/colleges">Colleges</a>
-            <a href="/reviews">Reviews</a>
-            <a href="/login">Login</a>
+            {/* ✅ Changed all <a> to <Link> */}
+            <Link to="/">Home</Link>
+            <Link to="/colleges">Colleges</Link>
+            <Link to="/reviews">Reviews</Link>
+            <Link to="/login">Logout</Link>
           </div>
         </div>
       </footer>
